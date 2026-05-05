@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+<div class="brand">College Asset Management System</div>
+</div>
+
+<main class="page-shell">
+<section class="auth-card">
+<h1>User Login</h1>
+<p class="subtitle">Sign in with your student or staff credentials.</p>
+{% if error %}
+<div class="error">{{ error }}</div>
+{% endif %}
+<form method="POST">
+<label for="username">Username</label>
+<input type="text" name="username" id="username" placeholder="Enter your username" required>
+<label for="password">Password</label>
+<input type="password" name="password" id="password" placeholder="Enter your password" required>
+<button type="submit">Login as User</button>
+</form>
+<p class="small-text">New user? <a href="/register">Register here</a>.</p>
+<div class="action-row">
+<a href="/" class="btn secondary">Back</a>
+</div>
+</section>
+</main>
+
+</body>
+</html>
